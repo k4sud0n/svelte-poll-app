@@ -1,11 +1,18 @@
 <script>
-  let name = 'Svelte';
+  let firstName = 'Jimi';
+  let lastName = 'Hendrix';
+  let beltColor = 'black';
 
-  // const handleInput = (e) => {
-  //   name = e.target.value;
-  // }
+  $: fullName = `${firstName} ${lastName}`;
+  $: {
+    console.log(lastName);
+    console.log(beltColor);
+  }
 </script>
 
-<h1>Hello {name}!</h1>
-<!-- <input type="text" value={name} on:input={handleInput}> -->
-<input type="text" bind:value={name}>
+<main>
+  <p>{fullName} - {beltColor}</p>
+  <input type="text" bind:value={firstName}>
+  <input type="text" bind:value={lastName}>
+  <input type="text" bind:value={beltColor}>
+</main>
