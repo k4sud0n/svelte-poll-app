@@ -12,7 +12,7 @@
   }
 </script>
 
-<Modal/> 
+<Modal message="Sign up for more offers!" isPromo={true} /> 
 
 <main>
   {#each people as person (person.id)}
