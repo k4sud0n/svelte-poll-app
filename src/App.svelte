@@ -21,7 +21,7 @@
 <Modal message="Sign up for more offers!" {showModal} on:click={toggleModal} /> 
 
 <main>
-    <button on:click={toggleModal}>Open Modal</button>
+    <button on:click|once={toggleModal}>Open Modal</button>
 
     {#each people as person (person.id)}
         <div>
