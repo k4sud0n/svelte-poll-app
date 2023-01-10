@@ -12,20 +12,19 @@
   }
 </script>
 
-<Modal/>
+<Modal/> 
 
 <main>
   {#each people as person (person.id)}
     <div>
-      <p>{person.name}</p>
+      <h4>{person.name}</h4>
       {#if person.beltColor === 'black'}
-        <strong>MASTER NINJA</strong>
+        <p><strong>MASTER NINJA</strong></p>
       {/if}
-      <p>{person.beltColor}</p>
-      <p>{person.age}</p>
+      <p>{person.age} years old, {person.beltColor} belt.</p>
       <button on:click={() => {deletePerson(person.id)}}>delete</button>
     </div>
   {:else}
     <div>There are no people to show...</div>
   {/each}
-</main>
+</main> 
