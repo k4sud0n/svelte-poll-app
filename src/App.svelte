@@ -1,34 +1,35 @@
 <script>
 	import Header from './components/Header.svelte';
 	import Footer from './components/Footer.svelte';
+
+	import Tabs from './lib/Tabs.svelte';
+
+	let items = ['Current Polls', 'Add New Poll'];
+	let activeItem = 'Current Polls';
+
+	const tabChange = (e) => {
+		activeItem = e.detail;
+	}
 </script>
 
 <Header />
 
 <main>
-  	<p>blahblah</p>
+  	<Tabs {items} {activeItem} on:tabChange={tabChange} />
+
+	{#if activeItem === 'Current Polls'}
+		<p>Poll list component goes here</p>
+	{:else if activeItem === 'Add New Poll'}
+		<p>New poll component goes here</p>
+	{/if}
 </main>
 
 <Footer />
 
 <style>
 	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
+		width: 100%;
+		max-width: 960px;
+		margin: 40px auto;
 	}
 </style>
