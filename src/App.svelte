@@ -17,11 +17,17 @@
     const deletePerson = (id) => {
         people = people.filter((person) => person.id != id)
     }
+
+    const addPerson = (e) => {
+        const person = e.detail;
+        people = [person, ...people];
+        showModal = false;
+    }
 </script>
 
 <Modal {showModal} on:click={toggleModal}>
     <h3>Add a New Person</h3>
-    <AddPersonForm/>
+    <AddPersonForm on:addPerson={addPerson} />
 </Modal>
 
 <main>
