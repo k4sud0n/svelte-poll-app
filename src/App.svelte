@@ -1,6 +1,7 @@
 <script>
 	import Header from './components/Header.svelte';
 	import Footer from './components/Footer.svelte';
+	import CreatePollForm from './components/CreatePollForm.svelte';
 
 	import Tabs from './lib/Tabs.svelte';
 
@@ -20,7 +21,7 @@
 	{#if activeItem === 'Current Polls'}
 		<p>Poll list component goes here</p>
 	{:else if activeItem === 'Add New Poll'}
-		<p>New poll component goes here</p>
+		<CreatePollForm />
 	{/if}
 </main>
 
