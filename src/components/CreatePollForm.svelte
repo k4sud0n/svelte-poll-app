@@ -4,6 +4,8 @@
 
     import Button from '../lib/Button.svelte';
 
+    export let activeItem = 'Add New Poll';
+
     let fields = {
         question: '',
         answerA: '',
@@ -45,6 +47,7 @@
         if (valid) {
             const poll = {...fields, votesA: 0, votesB: 0, id: Math.random()}
             dispatch('add', poll);
+            activeItem = 'Current Polls';
         }
      };
 </script>
